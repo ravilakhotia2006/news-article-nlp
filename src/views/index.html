@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Aiyser</title>
+</head>
+
+<body>
+  </header>
+  <main class="container">
+    <h2>Evaluate News Article using NLP</h2>
+    <section class="form-section">
+      <form id="theForm" class="linkForm" autocomplete="off" onsubmit="Client.handleSubmit(event)" method="post">
+        <label for="text-input" class="secondary-text">Type in a statement or URL of a news article to analyse</label></span>
+        <input id="text-input" name="text-input" type="text" required="true"/>
+        <input type="submit" value="Submit" class="btn">
+      </form>
+    </section>
+    <h3 id="error-field" class="error-text"></h3>
+    <div class="loader" id="loader"></div>
+    <section id="result-section" class="hidden">
+      <h2>Results:</h2>
+      <h3 class="secondary-text" id="review_text">
+        Review Text:
+        <span></span>
+      </h3>
+      <h3 class="secondary-text" id="polarity">
+        Polarity:
+        <span></span>
+      </h3>
+      <h3 class="secondary-text" id="polarity_confidence">
+        Polarity Confidence:
+        <span></span>
+      </h3>
+      <h3 class="secondary-text" id="subjectivity">
+        Subjectivity:
+        <span></span>
+      </h3>
+      <h3 class="secondary-text" id="subjectivity_confidence">
+        Subjectivity Confidence:
+        <span></span>
+      </h3>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <span class="footer-item"> © Udacity</span>
+  </footer>
+
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+      })
+    }
+  </script>
+</body>
+</html>
